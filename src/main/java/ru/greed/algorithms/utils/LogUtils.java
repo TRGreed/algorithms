@@ -11,6 +11,7 @@ import java.util.Map;
 public class LogUtils {
 
     public static void printNodeList(Map<String, Node> nodes) {
+        System.out.println();
         System.out.println("===== УЗЛОВОЕ ПРЕДСТАВЛЕНИЕ =====");
 
         List<String> sortedKeys = new ArrayList<>(nodes.keySet());
@@ -31,7 +32,9 @@ public class LogUtils {
     }
 
     public static void printMatrix(Edge[][] matrix, String[] labels) {
+        System.out.println();
         System.out.println("===== МАТРИЧНОЕ ПРЕДСТАВЛЕНИЕ =====");
+
         System.out.print("      ");
         for (String label : labels) System.out.printf("%-12s", label);
         System.out.println("\n" + "-".repeat(labels.length * 12 + 6));

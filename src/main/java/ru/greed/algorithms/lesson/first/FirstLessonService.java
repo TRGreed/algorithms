@@ -2,22 +2,24 @@ package ru.greed.algorithms.lesson.first;
 
 import ru.greed.algorithms.model.Edge;
 import ru.greed.algorithms.model.Node;
-import ru.greed.algorithms.utils.LogUtils;
 
 import java.util.HashMap;
 import java.util.Map;
 
 public class FirstLessonService {
 
-    public void start() {
-        startNodeMethod();
-        System.out.println();
-        startMatrixMethod();
+    private final String[] labels = {"A", "B", "C", "D", "E", "F"};
+
+    public Edge[][] matrixNet() {
+        return startMatrixMethod();
     }
 
-    private void startMatrixMethod() {
+    public Map<String, Node> nodesNet() {
+        return startNodeMethod();
+    }
+
+    private Edge[][] startMatrixMethod() {
         // Шпаргалка: A=0, B=1, C=2, D=3, E=4, F=5
-        String[] labels = {"A", "B", "C", "D", "E", "F"};
         Edge[][] matrix = new Edge[6][6];
 
         addEdge(matrix, 0, 1, 1500, 90);
@@ -29,10 +31,10 @@ public class FirstLessonService {
         addEdge(matrix, 3, 4, 2500, 1);
         addEdge(matrix, 4, 5, 300, 85);
 
-        LogUtils.printMatrix(matrix, labels);
+        return matrix;
     }
 
-    private void startNodeMethod() {
+    private Map<String, Node> startNodeMethod() {
         Map<String, Node> nodes = new HashMap<>();
         for (String name : new String[]{"A", "B", "C", "D", "E", "F"}) {
             nodes.put(name, new Node(name));
@@ -47,7 +49,7 @@ public class FirstLessonService {
         linkNodes(2500, 1, nodes.get("D"), nodes.get("E"));
         linkNodes(300, 85, nodes.get("E"), nodes.get("F"));
 
-        LogUtils.printNodeList(nodes);
+        return nodes;
     }
 
     private void addEdge(Edge[][] matrix, int u, int v, int cap, int loss) {
@@ -57,5 +59,9 @@ public class FirstLessonService {
     private void linkNodes(int capacity, int lost, Node firstNode, Node secondNode) {
         firstNode.addRelation(capacity, lost, secondNode);
         secondNode.addRelation(capacity, lost, firstNode);
+    }
+
+    public String[] getLabels() {
+        return labels;
     }
 }
