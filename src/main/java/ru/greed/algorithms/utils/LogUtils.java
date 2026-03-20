@@ -1,6 +1,7 @@
 package ru.greed.algorithms.utils;
 
 import ru.greed.algorithms.model.Edge;
+import ru.greed.algorithms.model.MinMaxDto;
 import ru.greed.algorithms.model.Node;
 
 import java.util.ArrayList;
@@ -51,5 +52,9 @@ public class LogUtils {
             }
             System.out.println();
         }
+    }
+
+    public static void printMinMax(MinMaxDto dto) {
+        System.out.printf("Минимальное значение массива: %d, Максимальное значение массива: %d.", dto.getMin(), dto.getMax());
     }
 }
