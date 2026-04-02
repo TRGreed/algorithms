@@ -4,10 +4,7 @@ import ru.greed.algorithms.model.Edge;
 import ru.greed.algorithms.model.MinMaxDto;
 import ru.greed.algorithms.model.Node;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class LogUtils {
 
@@ -56,5 +53,12 @@ public class LogUtils {
 
     public static void printMinMax(MinMaxDto dto) {
         System.out.printf("Минимальное значение массива: %d, Максимальное значение массива: %d.", dto.getMin(), dto.getMax());
+    }
+
+    public static void printQuickSort(int[] arr, int[] sortedArr) {
+        System.out.println("===== Несортированный массив =====");
+        System.out.println(Arrays.toString(arr));
+        System.out.println("===== Отсортированный массив =====");
+        System.out.println(Arrays.toString(sortedArr));
     }
 }
