@@ -1,23 +1,23 @@
 package ru.greed.algorithms.lesson.third;
 
+import ru.greed.algorithms.model.RegistryNode;
+
 public class ThirdLessonService {
 
-    private final IdRegistryList<String> list = new IdRegistryList<>();
+    private final CustomLinkedList<String> list = new CustomLinkedList<>();
 
     public void printTestList() {
-        long id1 = list.addLast("First");
-        long id2 = list.addLast("Second");
-        long id3 = list.addLast("Third");
+        RegistryNode<String> node1 = list.addLast("First");
+        RegistryNode<String> node2 = list.addLast("Second");
+        RegistryNode<String> node3 = list.addLast("Third");
 
         list.printAll();
 
-        long foundId = list.findByValue("Second");
-
-        list.insertAfter(foundId,"Inserted-Between-2-and-3");
+        list.insertAfter(node2, "Inserted-Between-2-and-3");
 
         list.printAll();
 
-        list.setValue(id1, "Updated First");
+        node1.setValue("Updated First");
 
         list.printAll();
 
@@ -25,22 +25,20 @@ public class ThirdLessonService {
 
         list.printAll();
 
-        list.addLast("Fourth");
+        list.insertBefore(list.find("New First"), "Zero");
 
         list.printAll();
 
-        list.remove(list.findByValue("Fourth"));
+        RegistryNode<String> node4 = list.addLast("Fourth");
 
         list.printAll();
 
-        String firstValue = list.getValue(id3);
+        list.remove(node4);
 
-        System.out.println("Значение для id3: " + firstValue);
+        list.printAll();
 
-        list.remove(id2);
+        list.remove(node2);
 
         list.printAll();
     }
-
-
 }

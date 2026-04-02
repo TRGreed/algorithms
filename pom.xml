@@ -9,7 +9,7 @@
     </parent>
     <groupId>ru.greed</groupId>
     <artifactId>algorithms</artifactId>
-    <version>0.0.5</version>
+    <version>0.0.6</version>
     <name>algorithms</name>
     <description>Application for algorithms lessons</description>
 
