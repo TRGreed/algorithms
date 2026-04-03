@@ -1,6 +1,7 @@
 package ru.greed.algorithms;
 
 import ru.greed.algorithms.lesson.first.FirstLessonService;
+import ru.greed.algorithms.lesson.fourth.FourthLessonService;
 import ru.greed.algorithms.lesson.second.SecondLessonService;
 import ru.greed.algorithms.lesson.third.ThirdLessonService;
 import ru.greed.algorithms.utils.LogUtils;
@@ -12,6 +13,7 @@ public class AlgorithmsApplication {
     private static final FirstLessonService firstLessonService = new FirstLessonService();
     private static final SecondLessonService secondLessonService = new SecondLessonService();
     private static final ThirdLessonService thirdLessonService = new ThirdLessonService();
+    private static final FourthLessonService fourthLessonService = new FourthLessonService();
 
     public static void main(String[] args) {
         String lesson = args[0];
@@ -23,6 +25,7 @@ public class AlgorithmsApplication {
             }
             case 2 -> LogUtils.printMinMax(secondLessonService.findMinMaxCompact(List.of(10, 2, 8, 4, 5, 20, -5, 21, 0, 1)));
             case 3 -> thirdLessonService.printTestList();
+            case 4 -> fourthLessonService.printTestSort();
             default -> System.out.println("Некорректный номер занятия");
         }
     }
