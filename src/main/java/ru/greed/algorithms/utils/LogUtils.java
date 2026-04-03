@@ -5,6 +5,7 @@ import ru.greed.algorithms.model.MinMaxDto;
 import ru.greed.algorithms.model.Node;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class LogUtils {
 
@@ -60,5 +61,60 @@ public class LogUtils {
         System.out.println(Arrays.toString(arr));
         System.out.println("===== Отсортированный массив =====");
         System.out.println(Arrays.toString(sortedArr));
+    }
+
+    public static void printMatrix(int[][] startMatrix, int[][] convertedMatrix) {
+        System.out.println();
+        System.out.println("===== УРОК 5. Задание 1. Преобразование матрицы =====");
+
+        System.out.println("\n Исходная матрица смежности:");
+        if (startMatrix == null || startMatrix.length == 0) {
+            System.out.println("(пустая матрица)");
+        } else {
+            for (int[] matrix : startMatrix) {
+                System.out.println(Arrays.toString(matrix));
+            }
+        }
+
+        System.out.println("\n Cписок рёбер:");
+        if (convertedMatrix == null || convertedMatrix.length == 0) {
+            System.out.println("Ребра отсутствуют.");
+        } else {
+            for (int[] matrix : convertedMatrix) {
+                System.out.printf("%d ➔ %d%n",
+                        matrix[0], matrix[1]);
+            }
+        }
+    }
+
+    public static void logTopologicalSort(int[][] startMatrix, List<Integer> sortedNodes) {
+        System.out.println();
+        System.out.println("===== УРОК 5. Задание 1. Топологическая сортировка. Алгоритм Тарьяна =====");
+
+        System.out.println("\nИсходный граф:");
+        for (int i = 0; i < startMatrix.length; i++) {
+            String dependencies = "";
+            for (int j = 0; j < startMatrix[i].length; j++) {
+                if (startMatrix[i][j] == 1) {
+                    dependencies += j + " ";
+                }
+            }
+            System.out.println();
+            System.out.printf("%d ➔ %s",
+                    i, dependencies.isEmpty() ? "null" : dependencies);
+        }
+
+        System.out.println();
+        System.out.println("\nРезультат сортировки:");
+        if (sortedNodes == null || sortedNodes.isEmpty()) {
+            System.out.println("    Список пуст.");
+        } else {
+            String path = sortedNodes.stream()
+                    .map(String::valueOf)
+                    .collect(Collectors.joining(" ➔ "));
+            System.out.println(path);
+        }
+
+        System.out.println("\n" + "=".repeat(50));
     }
 }
