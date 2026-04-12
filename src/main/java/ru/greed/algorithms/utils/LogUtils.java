@@ -117,4 +117,12 @@ public class LogUtils {
 
         System.out.println("\n" + "=".repeat(50));
     }
+
+    public static void logLCS(String first, String second, List<String> result) {
+        System.out.println();
+        System.out.println("===== УРОК 7. Динамическое программирование =====");
+        System.out.println("Строка 1: " + first);
+        System.out.println("Строка 2: " + second);
+        System.out.println("Список наибольших совпадающих подстрок: " + result);
+    }
 }
