@@ -4,6 +4,7 @@ import ru.greed.algorithms.lesson.fifth.FifthLessonService;
 import ru.greed.algorithms.lesson.first.FirstLessonService;
 import ru.greed.algorithms.lesson.fourth.FourthLessonService;
 import ru.greed.algorithms.lesson.second.SecondLessonService;
+import ru.greed.algorithms.lesson.seventh.LongestCommonSubsequence;
 import ru.greed.algorithms.lesson.sixth.SixthLessonService;
 import ru.greed.algorithms.lesson.third.ThirdLessonService;
 import ru.greed.algorithms.utils.LogUtils;
@@ -32,6 +33,7 @@ public class AlgorithmsApplication {
             case 4 -> fourthLessonService.printTestSort();
             case 5 -> fifthLessonService.printLesson();
             case 6 -> sixthLessonService.printBinaryTree();
+            case 7 -> LogUtils.logLCS("ABDEFADRFG", "DAFERG", LongestCommonSubsequence.find("ABDEFADRFG", "DAFERG"));
             default -> System.out.println("Некорректный номер занятия");
         }
     }
