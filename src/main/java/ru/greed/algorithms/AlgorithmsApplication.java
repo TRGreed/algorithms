@@ -4,6 +4,7 @@ import ru.greed.algorithms.lesson.eighth.EighthLessonService;
 import ru.greed.algorithms.lesson.fifth.FifthLessonService;
 import ru.greed.algorithms.lesson.first.FirstLessonService;
 import ru.greed.algorithms.lesson.fourth.FourthLessonService;
+import ru.greed.algorithms.lesson.ninth.NinthLessonService;
 import ru.greed.algorithms.lesson.second.SecondLessonService;
 import ru.greed.algorithms.lesson.seventh.LongestCommonSubsequence;
 import ru.greed.algorithms.lesson.sixth.SixthLessonService;
@@ -21,6 +22,7 @@ public class AlgorithmsApplication {
     private static final FifthLessonService fifthLessonService = new FifthLessonService();
     private static final SixthLessonService sixthLessonService = new SixthLessonService();
     private static final EighthLessonService eighthLessonService = new EighthLessonService();
+    private static final NinthLessonService ninthLessonService = new NinthLessonService();
 
     public static void main(String[] args) {
         String lesson = args[0];
@@ -37,6 +39,7 @@ public class AlgorithmsApplication {
             case 6 -> sixthLessonService.printBinaryTree();
             case 7 -> LogUtils.logLCS("ABDEFADRFG", "DAFERG", LongestCommonSubsequence.find("ABDEFADRFG", "DAFERG"));
             case 8 -> eighthLessonService.processResourceFile("input.txt");
+            case 9 -> ninthLessonService.mainMethod();
             default -> System.out.println("Некорректный номер занятия");
         }
     }
