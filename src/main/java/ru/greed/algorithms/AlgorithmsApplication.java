@@ -8,9 +8,11 @@ import ru.greed.algorithms.lesson.ninth.NinthLessonService;
 import ru.greed.algorithms.lesson.second.SecondLessonService;
 import ru.greed.algorithms.lesson.seventh.LongestCommonSubsequence;
 import ru.greed.algorithms.lesson.sixth.SixthLessonService;
+import ru.greed.algorithms.lesson.tenth.TenthLessonService;
 import ru.greed.algorithms.lesson.third.ThirdLessonService;
 import ru.greed.algorithms.utils.LogUtils;
 
+import java.io.IOException;
 import java.util.List;
 
 public class AlgorithmsApplication {
@@ -23,8 +25,9 @@ public class AlgorithmsApplication {
     private static final SixthLessonService sixthLessonService = new SixthLessonService();
     private static final EighthLessonService eighthLessonService = new EighthLessonService();
     private static final NinthLessonService ninthLessonService = new NinthLessonService();
+    private static final TenthLessonService tenthLessonService = new TenthLessonService();
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         String lesson = args[0];
 
         switch (Integer.parseInt(lesson)) {
@@ -40,6 +43,7 @@ public class AlgorithmsApplication {
             case 7 -> LogUtils.logLCS("ABDEFADRFG", "DAFERG", LongestCommonSubsequence.find("ABDEFADRFG", "DAFERG"));
             case 8 -> eighthLessonService.processResourceFile("input.txt");
             case 9 -> ninthLessonService.mainMethod();
+            case 10 -> tenthLessonService.logResult(tenthLessonService.processFile("10-lesson-input.txt"));
             default -> System.out.println("Некорректный номер занятия");
         }
     }
