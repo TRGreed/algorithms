@@ -1,6 +1,7 @@
 package ru.greed.algorithms;
 
 import ru.greed.algorithms.lesson.eighth.EighthLessonService;
+import ru.greed.algorithms.lesson.eleventh.EleventhLessonService;
 import ru.greed.algorithms.lesson.fifth.FifthLessonService;
 import ru.greed.algorithms.lesson.first.FirstLessonService;
 import ru.greed.algorithms.lesson.fourth.FourthLessonService;
@@ -26,6 +27,7 @@ public class AlgorithmsApplication {
     private static final EighthLessonService eighthLessonService = new EighthLessonService();
     private static final NinthLessonService ninthLessonService = new NinthLessonService();
     private static final TenthLessonService tenthLessonService = new TenthLessonService();
+    private static final EleventhLessonService  eleventhLessonService = new EleventhLessonService();
 
     public static void main(String[] args) throws IOException {
         String lesson = args[0];
@@ -44,6 +46,7 @@ public class AlgorithmsApplication {
             case 8 -> eighthLessonService.processResourceFile("input.txt");
             case 9 -> ninthLessonService.mainMethod();
             case 10 -> tenthLessonService.logResult(tenthLessonService.processFile("10-lesson-input.txt"));
+            case 11 -> eleventhLessonService.printResult();
             default -> System.out.println("Некорректный номер занятия");
         }
     }
